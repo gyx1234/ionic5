@@ -8,11 +8,7 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  constructor(
-      private router: Router
-  ) {
-    console.log('tab1')
-  }
+  constructor(private router: Router) {console.log('tab1')}
 
   onclick() {
     console.log('点击跳转 ')

@@ -17,13 +17,14 @@
           <app-zizujian01></app-zizujian01>
 
         2) tab1.module.ts内写入 ：
-        import {ComponentsModule} from "../../components/components.module"; 
+        import {ComponentsModule} from "../../components/components.module";
         imports:[ComponentsModule]
 
 
  页面跳转带参：
     1、tab1.page.ts内写入 ：
     import { Router } from '@angular/router';
+    constructor(private router: Router) {}
     this.router.navigate(["./detail/detail"], {
         queryParams: {
            id: "123",
@@ -31,8 +32,14 @@
         }
     })
     2、detail.ts写入：
-    import { Router, ActivatedRoute, Params } from '@angular/router';
-    this.activeRoute.snapshot.queryParams['id'];
-    this.activeRoute.snapshot.queryParams['name'];
+    import { ActivatedRoute, Params } from '@angular/router';
+    constructor(
+          public activeRoute: ActivatedRoute,
+      ) {
+          // 获取 detail 携带的参数
+          var id = this.activeRoute.snapshot.queryParams['id'];
+          var name = this.activeRoute.snapshot.queryParams['name'];
+          console.log('获取 detail 携带的参数 id，name: ', id,name)
+      }
 
 ```
