@@ -1,4 +1,4 @@
-# three
+# ionic5
 
 > A ionic project
 
@@ -17,7 +17,7 @@
           <app-zizujian01></app-zizujian01>
 
         2) tab1.module.ts内写入 ：
-        import {ComponentsModule} from "../../components/components.module"; // 自定义组件
+        import {ComponentsModule} from "../../components/components.module"; 
         imports:[ComponentsModule]
 
 
